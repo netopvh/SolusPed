@@ -1,0 +1,27 @@
+services:
+  web:
+    build: .
+    container_name: solusped
+    ports:
+      - "3000:80"
+    restart: unless-stopped
+    networks:
+      - traefik_proxy
+    labels:
+      - "traefik.enable=true"
+      # HTTP
+      - "traefik.http.routers.solusped-lp.rule=Host(`lp.solusped.com.br`)"
+      - "traefik.http.routers.solusped-lp.entrypoints=web"
+      - "traefik.http.routers.solusped-lp.service=solusped-lp"
+      # HTTPS
+      - "traefik.http.routers.solusped-lp-secure.rule=Host(`lp.solusped.com.br`)"
+      - "traefik.http.routers.solusped-lp-secure.entrypoints=websecure"
+      - "traefik.http.routers.solusped-lp-secure.service=solusped-lp"
+      - "traefik.http.routers.solusped-lp-secure.tls=true"
+      - "traefik.http.routers.solusped-lp-secure.tls.certresolver=letsencrypt"
+      # Service
+      - "traefik.http.services.solusped-lp.loadbalancer.server.port=80"
+
+networks:
+  traefik_proxy:
+    external: true

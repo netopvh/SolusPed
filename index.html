@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SolusPed - Gestão de Pedidos e Delivery para Restaurantes</title>
+  <meta name="description" content="Gestão de pedidos e delivery que funciona! Simplifique a operação do seu restaurante com plataforma online, PDV, Totem, WhatsApp e mais. Planos a partir de R$ 50.">
+  <meta name="keywords" content="gestão de pedidos, delivery, PDV restaurante, cardápio digital, sistema restaurante, SolusPed, totem pedidos, chatbot WhatsApp">
+  <meta name="author" content="SolusPed">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://lp.solusped.com.br/">
+  <meta name="theme-color" content="#8B1E1E">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="assets/favicon.png" sizes="16x16">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lp.solusped.com.br/">
+  <meta property="og:title" content="SolusPed - Gestão de Pedidos e Delivery para Restaurantes">
+  <meta property="og:description" content="Plataforma completa para restaurantes: PDV, cardápio digital, Totem, chatbot WhatsApp e sistema para motoboy. Planos a partir de R$ 50.">
+  <meta property="og:image" content="https://lp.solusped.com.br/assets/images/app.png">
+  <meta property="og:image:alt" content="Dashboard SolusPed - Gestão de pedidos e delivery">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="SolusPed">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SolusPed - Gestão de Pedidos e Delivery para Restaurantes">
+  <meta name="twitter:description" content="Plataforma completa para restaurantes: PDV, cardápio digital, Totem, chatbot WhatsApp. Planos a partir de R$ 50.">
+  <meta name="twitter:image" content="https://lp.solusped.com.br/assets/images/app.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            primary: {
+              DEFAULT: '#8B1E1E',
+              light: '#A82D2D',
+              dark: '#6B1717',
+            },
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SolusPed",
+    "url": "https://lp.solusped.com.br",
+    "logo": "https://lp.solusped.com.br/assets/favicon.png",
+    "description": "Gestão de pedidos e delivery para restaurantes. Plataforma com PDV, cardápio digital, Totem e integração WhatsApp.",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+55-48-99144-5565",
+      "contactType": "customer service",
+      "areaServed": "BR"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "SolusPed",
+    "url": "https://lp.solusped.com.br",
+    "description": "Gestão de pedidos e delivery que funciona! Simplifique a operação do seu restaurante.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "SolusPed"
+    }
+  }
+  </script>
+
+  <base target="_blank">
+</head>
+<body class="bg-white text-gray-900">
+
+  <!-- ==================== NAVEGAÇÃO ==================== -->
+  <header class="navbar fixed top-0 left-0 right-0 z-50 bg-transparent border-b border-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="flex items-center justify-between h-[72px]">
+        <a href="#" class="flex items-center gap-2 group">
+          <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center transition-transform group-hover:scale-105">
+            <i data-lucide="check" class="w-6 h-6 text-white" stroke-width="3"></i>
+          </div>
+          <span class="text-xl font-bold text-gray-900">SolusPed</span>
+        </a>
+
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#features" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Funcionalidades</a>
+          <a href="#pricing" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Planos</a>
+          <a href="#testimonials" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Depoimentos</a>
+          <a href="#faq" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">FAQ</a>
+          <a href="#footer" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Contato</a>
+        </div>
+
+        <div class="hidden md:block">
+          <a href="#pricing" target="_self" class="btn-primary bg-primary text-white font-semibold px-6 py-2.5 rounded-lg inline-block">Conheça nossos planos</a>
+        </div>
+
+        <button id="mobile-menu-btn" class="md:hidden p-2">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Menu Mobile Overlay -->
+  <div id="mobile-overlay" class="mobile-overlay fixed inset-0 bg-black/50 z-50 md:hidden"></div>
+
+  <!-- Menu Mobile -->
+  <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 bottom-0 w-[300px] bg-white z-50 md:hidden shadow-xl">
+    <div class="p-6">
+      <div class="flex justify-between items-center mb-8">
+        <span class="text-xl font-bold">Menu</span>
+        <button id="mobile-close-btn" class="p-2">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+      <div class="flex flex-col gap-4">
+        <a href="#features" class="text-lg font-medium text-gray-700 hover:text-primary transition-colors mobile-link">Funcionalidades</a>
+        <a href="#pricing" class="text-lg font-medium text-gray-700 hover:text-primary transition-colors mobile-link">Planos</a>
+        <a href="#testimonials" class="text-lg font-medium text-gray-700 hover:text-primary transition-colors mobile-link">Depoimentos</a>
+        <a href="#faq" class="text-lg font-medium text-gray-700 hover:text-primary transition-colors mobile-link">FAQ</a>
+        <a href="#footer" class="text-lg font-medium text-gray-700 hover:text-primary transition-colors mobile-link">Contato</a>
+        <a href="#pricing" target="_self" class="btn-primary bg-primary text-white font-semibold w-full py-3 rounded-lg mt-4 inline-block text-center mobile-link">Conheça nossos planos</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="relative min-h-screen pt-[72px] overflow-hidden bg-gradient-to-br from-gray-50 via-gray-100 to-gray-50">
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-float"></div>
+      <div class="absolute bottom-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float" style="animation-delay: 2s;"></div>
+      <div class="absolute top-1/2 left-1/3 w-48 h-48 bg-primary/3 rounded-full blur-2xl animate-float" style="animation-delay: 4s;"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div class="max-w-xl">
+          <div class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6 animate-slide-up">
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            Plataforma #1 para Restaurantes
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-[56px] font-extrabold text-gray-900 leading-tight tracking-tight mb-6 animate-slide-up" style="animation-delay: 0.1s;">
+            Gestão de pedidos e delivery que funciona!
+          </h1>
+
+          <p class="text-lg sm:text-xl text-gray-600 leading-relaxed mb-8 animate-slide-up" style="animation-delay: 0.2s;">
+            Simplifique a operação do seu restaurante com uma plataforma completa.
+            Receba pedidos, gerencie entregas e aumente suas vendas em um só lugar.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 mb-10 animate-slide-up" style="animation-delay: 0.3s;">
+            <a href="#pricing" target="_self" class="btn-primary bg-primary text-white font-semibold px-8 py-4 rounded-xl text-base shadow-lg inline-block text-center">Conheça nossos planos</a>
+            <a href="https://wa.me/5548991445565" target="_blank" rel="noopener noreferrer" class="border-2 border-primary text-primary hover:bg-primary/5 font-semibold px-8 py-4 rounded-xl text-base transition-colors flex items-center justify-center gap-2">
+              <i data-lucide="play" class="w-5 h-5"></i>
+              Ver Demonstração
+            </a>
+          </div>
+
+          <div class="flex items-center gap-4 animate-slide-up" style="animation-delay: 0.4s;">
+            <div class="flex -space-x-3">
+              <div class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-200 to-amber-300 border-2 border-white flex items-center justify-center text-xs font-medium text-amber-800">1</div>
+              <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-200 to-blue-300 border-2 border-white flex items-center justify-center text-xs font-medium text-blue-800">2</div>
+              <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-200 to-green-300 border-2 border-white flex items-center justify-center text-xs font-medium text-green-800">3</div>
+              <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-200 to-purple-300 border-2 border-white flex items-center justify-center text-xs font-medium text-purple-800">4</div>
+              <div class="w-10 h-10 rounded-full bg-gradient-to-br from-pink-200 to-pink-300 border-2 border-white flex items-center justify-center text-xs font-medium text-pink-800">5</div>
+            </div>
+            <div>
+              <div class="flex items-center gap-1 mb-0.5">
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+                <span class="text-sm font-semibold text-gray-900 ml-1">4.9/5</span>
+              </div>
+              <p class="text-sm text-gray-500">Mais de 2.000 restaurantes confiam na SolusPed</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative animate-scale-in" style="animation-delay: 0.4s;">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+            <img src="assets/images/app.png" alt="Dashboard SolusPed" class="w-full h-auto">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent pointer-events-none"></div>
+          </div>
+
+          <div class="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-4 hidden lg:block animate-float">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                <i data-lucide="check" class="w-6 h-6 text-green-600"></i>
+              </div>
+              <div>
+                <p class="text-sm text-gray-500">Pedidos Hoje</p>
+                <p class="text-2xl font-bold text-gray-900">+127</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="absolute -top-4 -right-4 bg-white rounded-xl shadow-xl p-4 hidden lg:block animate-float" style="animation-delay: 3s;">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-lg">🍕</div>
+              <div>
+                <p class="text-sm font-medium text-gray-900">Novo pedido!</p>
+                <p class="text-xs text-gray-500">Pizza Grande - R$ 45,00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FUNCIONALIDADES ==================== -->
+  <section id="features" class="py-24 lg:py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16 lg:mb-20 scroll-animate">
+        <span class="inline-block text-sm font-semibold text-primary tracking-widest uppercase mb-4">Funcionalidades</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-[40px] font-bold text-gray-900 leading-tight mb-4">
+          Tudo que você precisa para gerenciar seu restaurante
+        </h2>
+        <p class="text-lg text-gray-600">
+          Uma plataforma completa com todas as ferramentas para simplificar sua operação e aumentar suas vendas.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div class="feature-card bg-white border border-gray-200 rounded-2xl p-8 scroll-animate stagger-1">
+          <div class="feature-icon w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+            <i data-lucide="zap" class="w-7 h-7 text-primary"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Pedidos em Tempo Real</h3>
+          <p class="text-gray-600 leading-relaxed">Receba pedidos instantaneamente do iFood, WhatsApp e site próprio. Notificações em tempo real para nunca perder uma venda.</p>
+        </div>
+
+        <div class="feature-card bg-white border border-gray-200 rounded-2xl p-8 scroll-animate stagger-2">
+          <div class="feature-icon w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+            <i data-lucide="truck" class="w-7 h-7 text-primary"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Gestão de Delivery</h3>
+          <p class="text-gray-600 leading-relaxed">Controle total das entregas com rastreamento em tempo real, otimização de rotas e comunicação automática com clientes.</p>
+        </div>
+
+        <div class="feature-card bg-white border border-gray-200 rounded-2xl p-8 scroll-animate stagger-3">
+          <div class="feature-icon w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+            <i data-lucide="bar-chart-3" class="w-7 h-7 text-primary"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Relatórios Inteligentes</h3>
+          <p class="text-gray-600 leading-relaxed">Dashboards completos com métricas de vendas, produtos mais vendidos, horários de pico e muito mais.</p>
+        </div>
+
+        <div class="feature-card bg-white border border-gray-200 rounded-2xl p-8 scroll-animate stagger-4">
+          <div class="feature-icon w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+            <i data-lucide="smartphone" class="w-7 h-7 text-primary"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Cardápio Digital</h3>
+          <p class="text-gray-600 leading-relaxed">Crie seu cardápio online em minutos. QR Code para mesas, integração com redes sociais e pedidos diretos.</p>
+        </div>
+
+        <div class="feature-card bg-white border border-gray-200 rounded-2xl p-8 scroll-animate stagger-5">
+          <div class="feature-icon w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+            <i data-lucide="package" class="w-7 h-7 text-primary"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Controle de Estoque</h3>
+          <p class="text-gray-600 leading-relaxed">Gerencie seu estoque automaticamente. Alertas de baixa quantidade e integração com pedidos.</p>
+        </div>
+
+        <div class="feature-card bg-white border border-gray-200 rounded-2xl p-8 scroll-animate stagger-6">
+          <div class="feature-icon w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+            <i data-lucide="users" class="w-7 h-7 text-primary"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Múltiplos Usuários</h3>
+          <p class="text-gray-600 leading-relaxed">Diferentes níveis de acesso para garçons, caixas, gerentes e proprietários. Controle total da equipe.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== COMO FUNCIONA ==================== -->
+  <section class="py-24 lg:py-32 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20">
+        <div class="lg:sticky lg:top-32 lg:self-start scroll-animate">
+          <span class="inline-block text-sm font-semibold text-primary tracking-widest uppercase mb-4">Como Funciona</span>
+          <h2 class="text-3xl sm:text-4xl lg:text-[40px] font-bold text-gray-900 leading-tight mb-4">
+            Comece a usar em 3 passos simples
+          </h2>
+          <p class="text-lg text-gray-600">
+            Configuração rápida e fácil. Em poucos minutos seu restaurante estará pronto para receber pedidos.
+          </p>
+        </div>
+
+        <div class="space-y-0">
+          <!-- Passo 1 -->
+          <div class="relative flex gap-6 lg:gap-8 scroll-animate stagger-1">
+            <div class="flex-shrink-0">
+              <div class="w-14 h-14 lg:w-16 lg:h-16 bg-primary rounded-full flex items-center justify-center transition-transform hover:scale-110">
+                <span class="text-xl lg:text-2xl font-bold text-white">01</span>
+              </div>
+              <div class="hidden lg:block w-0.5 h-24 bg-gradient-to-b from-primary to-primary/20 mx-auto mt-4"></div>
+            </div>
+            <div class="flex-1 pb-8 lg:pb-12">
+              <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+                <div class="grid lg:grid-cols-2 gap-0">
+                  <div class="p-6 lg:p-8">
+                    <h3 class="text-xl lg:text-2xl font-bold text-gray-900 mb-3">Cadastre seu Restaurante</h3>
+                    <p class="text-gray-600 leading-relaxed">Crie sua conta em menos de 2 minutos. Informe os dados do seu restaurante e configure seu perfil.</p>
+                  </div>
+                  <div class="relative h-48 lg:h-auto bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
+                    <i data-lucide="user-plus" class="w-20 h-20 text-primary/30"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Passo 2 -->
+          <div class="relative flex gap-6 lg:gap-8 scroll-animate stagger-2">
+            <div class="flex-shrink-0">
+              <div class="w-14 h-14 lg:w-16 lg:h-16 bg-primary rounded-full flex items-center justify-center transition-transform hover:scale-110">
+                <span class="text-xl lg:text-2xl font-bold text-white">02</span>
+              </div>
+              <div class="hidden lg:block w-0.5 h-24 bg-gradient-to-b from-primary to-primary/20 mx-auto mt-4"></div>
+            </div>
+            <div class="flex-1 pb-8 lg:pb-12">
+              <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+                <div class="grid lg:grid-cols-2 gap-0">
+                  <div class="p-6 lg:p-8">
+                    <h3 class="text-xl lg:text-2xl font-bold text-gray-900 mb-3">Configure seu Cardápio</h3>
+                    <p class="text-gray-600 leading-relaxed">Adicione seus produtos, fotos, preços e categorias. Nossa interface intuitiva torna tudo simples.</p>
+                  </div>
+                  <div class="relative h-48 lg:h-auto bg-gradient-to-br from-amber-50 to-orange-100 flex items-center justify-center">
+                    <i data-lucide="utensils" class="w-20 h-20 text-primary/30"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Passo 3 -->
+          <div class="relative flex gap-6 lg:gap-8 scroll-animate stagger-3">
+            <div class="flex-shrink-0">
+              <div class="w-14 h-14 lg:w-16 lg:h-16 bg-primary rounded-full flex items-center justify-center transition-transform hover:scale-110">
+                <span class="text-xl lg:text-2xl font-bold text-white">03</span>
+              </div>
+            </div>
+            <div class="flex-1">
+              <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+                <div class="grid lg:grid-cols-2 gap-0">
+                  <div class="p-6 lg:p-8">
+                    <h3 class="text-xl lg:text-2xl font-bold text-gray-900 mb-3">Comece a Vender</h3>
+                    <p class="text-gray-600 leading-relaxed">Pronto! Seu restaurante está online. Receba pedidos de múltiplos canais e gerencie tudo em um só lugar.</p>
+                  </div>
+                  <div class="relative h-48 lg:h-auto bg-gradient-to-br from-green-50 to-emerald-100 flex items-center justify-center">
+                    <i data-lucide="trending-up" class="w-20 h-20 text-primary/30"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ESTATÍSTICAS ==================== -->
+  <section class="py-16 lg:py-24 bg-white border-y border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div class="text-center scroll-animate stagger-1">
+          <div class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary mb-2 stat-number" data-target="2000" data-suffix="+">0+</div>
+          <p class="text-gray-600 font-medium">Restaurantes Atendidos</p>
+        </div>
+        <div class="text-center scroll-animate stagger-2">
+          <div class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary mb-2 stat-number" data-target="5" data-suffix="M+">0M+</div>
+          <p class="text-gray-600 font-medium">Pedidos Processados</p>
+        </div>
+        <div class="text-center scroll-animate stagger-3">
+          <div class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary mb-2 stat-number" data-target="99.9" data-suffix="%" data-decimals="1">0%</div>
+          <p class="text-gray-600 font-medium">Uptime Garantido</p>
+        </div>
+        <div class="text-center scroll-animate stagger-4">
+          <div class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary mb-2 stat-number" data-target="4.9" data-suffix="/5" data-decimals="1">0/5</div>
+          <p class="text-gray-600 font-medium">Avaliação Média</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PLANOS ==================== -->
+  <section id="pricing" class="py-24 lg:py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12 scroll-animate">
+        <span class="inline-block text-sm font-semibold text-primary tracking-widest uppercase mb-4">Planos</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-[40px] font-bold text-gray-900 leading-tight mb-4">
+          Escolha o plano ideal para seu restaurante
+        </h2>
+        <p class="text-lg text-gray-600">
+          Comece grátis e evolua conforme seu negócio cresce. Sem taxa de setup, cancele quando quiser.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-6 items-start">
+        <!-- Básico 1 -->
+        <div class="pricing-card bg-white border border-gray-200 rounded-2xl p-8 scroll-animate stagger-1">
+          <div class="text-center mb-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-1">Básico 1</h3>
+            <p class="text-sm text-gray-500">Entrada para pequenos negócios</p>
+          </div>
+          <div class="text-center mb-8">
+            <span class="text-4xl lg:text-5xl font-bold text-gray-900">R$ 50</span>
+          </div>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start gap-3"><div class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3 text-green-600"></i></div><span class="text-gray-600 text-sm">Plataforma online via navegadores</span></li>
+            <li class="flex items-start gap-3"><div class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3 text-green-600"></i></div><span class="text-gray-600 text-sm">Acesso via múltiplos dispositivos</span></li>
+            <li class="flex items-start gap-3"><div class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3 text-green-600"></i></div><span class="text-gray-600 text-sm">Sistema de PDV sem emissão de cupom fiscal</span></li>
+          </ul>
+          <a href="https://wa.me/5548991445565" target="_blank" rel="noopener noreferrer" class="block w-full py-4 rounded-xl font-semibold border-2 border-gray-200 text-gray-900 hover:border-primary hover:text-primary transition-colors text-center">Contratar</a>
+        </div>
+
+        <!-- Básico 2 -->
+        <div class="pricing-card bg-white border border-gray-200 rounded-2xl p-8 scroll-animate stagger-2">
+          <div class="text-center mb-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-1">Básico 2</h3>
+            <p class="text-sm text-gray-500">Com emissão fiscal</p>
+          </div>
+          <div class="text-center mb-8">
+            <span class="text-4xl lg:text-5xl font-bold text-gray-900">R$ 150</span>
+            <span class="text-gray-500">/mês</span>
+          </div>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start gap-3"><div class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3 text-green-600"></i></div><span class="text-gray-600 text-sm">Plataforma online via navegadores</span></li>
+            <li class="flex items-start gap-3"><div class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3 text-green-600"></i></div><span class="text-gray-600 text-sm">Acesso via múltiplos dispositivos</span></li>
+            <li class="flex items-start gap-3"><div class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3 text-green-600"></i></div><span class="text-gray-600 text-sm">Sistema de PDV com emissão de cupom fiscal</span></li>
+          </ul>
+          <a href="https://wa.me/5548991445565" target="_blank" rel="noopener noreferrer" class="block w-full py-4 rounded-xl font-semibold border-2 border-gray-200 text-gray-900 hover:border-primary hover:text-primary transition-colors text-center">Contratar</a>
+        </div>
+
+        <!-- Intermediário (Destaque) -->
+        <div class="pricing-card featured bg-white border-2 border-primary rounded-2xl p-8 shadow-xl lg:scale-105 z-10 scroll-animate stagger-3 relative">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+            <span class="bg-primary text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider">Mais Popular</span>
+          </div>
+          <div class="text-center mb-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-1">Intermediário</h3>
+            <p class="text-sm text-gray-500">Recursos avançados</p>
+          </div>
+          <div class="text-center mb-8">
+            <span class="text-4xl lg:text-5xl font-bold text-gray-900">R$ 250</span>
+            <span class="text-gray-500">/mês</span>
+          </div>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start gap-3"><div class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3 text-green-600"></i></div><span class="text-gray-600 text-sm">Plataforma online via navegadores</span></li>
+            <li class="flex items-start gap-3"><div class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3 text-green-600"></i></div><span class="text-gray-600 text-sm">Plataforma desktop para Windows</span></li>
+            <li class="flex items-start gap-3"><div class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3 text-green-600"></i></div><span class="text-gray-600 text-sm">Acesso via múltiplos dispositivos</span></li>
+            <li class="flex items-start gap-3"><div class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3 text-green-600"></i></div><span class="text-gray-600 text-sm">Sistema de PDV com emissão de cupom fiscal</span></li>
+            <li class="flex items-start gap-3"><div class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3 text-green-600"></i></div><span class="text-gray-600 text-sm">Sistema de Totem para pedidos autônomos</span></li>
+            <li class="flex items-start gap-3"><div class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3 text-green-600"></i></div><span class="text-gray-600 text-sm">Chatbot com API oficial para WhatsApp</span></li>
+          </ul>
+          <a href="https://wa.me/5548991445565" target="_blank" rel="noopener noreferrer" class="btn-primary block w-full py-4 rounded-xl font-semibold bg-primary text-white text-center">Contratar</a>
+        </div>
+
+        <!-- Completo -->
+        <div class="pricing-card bg-white border border-gray-200 rounded-2xl p-8 scroll-animate stagger-4">
+          <div class="text-center mb-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-1">Completo</h3>
+            <p class="text-sm text-gray-500">Solução completa para o seu negócio</p>
+          </div>
+          <div class="text-center mb-8">
+            <span class="text-4xl lg:text-5xl font-bold text-gray-900">R$ 350</span>
+            <span class="text-gray-500">/mês</span>
+          </div>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start gap-3"><div class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3 text-green-600"></i></div><span class="text-gray-600 text-sm">Tudo do Intermediário</span></li>
+            <li class="flex items-start gap-3"><div class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3 text-green-600"></i></div><span class="text-gray-600 text-sm">Sistema para motoboy de entregas</span></li>
+            <li class="flex items-start gap-3"><div class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3 text-green-600"></i></div><span class="text-gray-600 text-sm">Sistema KDS e monitor de cozinha</span></li>
+            <li class="flex items-start gap-3"><div class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3 text-green-600"></i></div><span class="text-gray-600 text-sm">Múltiplas impressoras</span></li>
+            <li class="flex items-start gap-3"><div class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3 text-green-600"></i></div><span class="text-gray-600 text-sm">Suporte a equipamentos de informática sem custo de manutenção</span></li>
+            <li class="flex items-start gap-3"><div class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3 text-green-600"></i></div><span class="text-gray-600 text-xs">(peças por conta do cliente)</span></li>
+          </ul>
+          <a href="https://wa.me/5548991445565" target="_blank" rel="noopener noreferrer" class="block w-full py-4 rounded-xl font-semibold border-2 border-gray-200 text-gray-900 hover:border-primary hover:text-primary transition-colors text-center">Contratar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== DEPOIMENTOS ==================== -->
+  <section id="testimonials" class="py-24 lg:py-32 bg-gradient-to-br from-primary to-primary-dark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16 scroll-animate">
+        <span class="inline-block text-sm font-semibold text-white/70 tracking-widest uppercase mb-4">Depoimentos</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-[40px] font-bold text-white leading-tight mb-4">
+          O que nossos clientes dizem
+        </h2>
+        <p class="text-lg text-white/80">
+          Mais de 2.000 restaurantes já transformaram sua operação com a SolusPed.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+        <div class="testimonial-card rounded-2xl p-8 scroll-animate stagger-1">
+          <i data-lucide="quote" class="w-8 h-8 text-white/30 mb-4 animate-pulse-slow"></i>
+          <p class="text-white text-base lg:text-lg leading-relaxed mb-6 italic">
+            "A SolusPed transformou completamente nossa operação. Reduzimos o tempo de preparo em 30% e aumentamos as vendas em 40%. A integração com iFood é perfeita!"
+          </p>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-amber-200 to-amber-400 flex items-center justify-center text-amber-800 font-bold">MS</div>
+            <div>
+              <p class="text-white font-semibold">Maria Silva</p>
+              <p class="text-white/70 text-sm">Proprietária, Pizzaria Bella</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card rounded-2xl p-8 scroll-animate stagger-2">
+          <i data-lucide="quote" class="w-8 h-8 text-white/30 mb-4 animate-pulse-slow"></i>
+          <p class="text-white text-base lg:text-lg leading-relaxed mb-6 italic">
+            "Finalmente uma plataforma que realmente funciona! O controle de estoque automático nos economiza horas todo dia. Suporte técnico excelente."
+          </p>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-200 to-blue-400 flex items-center justify-center text-blue-800 font-bold">JS</div>
+            <div>
+              <p class="text-white font-semibold">João Santos</p>
+              <p class="text-white/70 text-sm">Gerente, Burger House</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card rounded-2xl p-8 scroll-animate stagger-3">
+          <i data-lucide="quote" class="w-8 h-8 text-white/30 mb-4 animate-pulse-slow"></i>
+          <p class="text-white text-base lg:text-lg leading-relaxed mb-6 italic">
+            "Começamos com o plano grátis e em 2 meses já estávamos no Pro. O ROI foi imediato. Recomendo para todo restaurante que quer crescer."
+          </p>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-pink-200 to-pink-400 flex items-center justify-center text-pink-800 font-bold">AC</div>
+            <div>
+              <p class="text-white font-semibold">Ana Costa</p>
+              <p class="text-white/70 text-sm">Diretora, Sabor & Cia</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FAQ ==================== -->
+  <section id="faq" class="py-24 lg:py-32 bg-gray-50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 scroll-animate">
+        <span class="inline-block text-sm font-semibold text-primary tracking-widest uppercase mb-4">FAQ</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-[40px] font-bold text-gray-900 leading-tight mb-4">
+          Dúvidas Frequentes
+        </h2>
+        <p class="text-lg text-gray-600">
+          Tudo que você precisa saber sobre a SolusPed.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        <div class="accordion-item bg-white border border-gray-200 rounded-xl scroll-animate stagger-1">
+          <button class="accordion-trigger w-full flex items-center justify-between p-6 text-left">
+            <span class="font-semibold text-gray-900">Como funciona o período de teste grátis?</span>
+            <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 text-primary flex-shrink-0"></i>
+          </button>
+          <div class="accordion-content">
+            <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+              Você pode usar o plano Starter gratuitamente para sempre, com até 50 pedidos por mês. Não precisa de cartão de crédito para começar.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item bg-white border border-gray-200 rounded-xl scroll-animate stagger-2">
+          <button class="accordion-trigger w-full flex items-center justify-between p-6 text-left">
+            <span class="font-semibold text-gray-900">Posso integrar com o iFood e outros apps?</span>
+            <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 text-primary flex-shrink-0"></i>
+          </button>
+          <div class="accordion-content">
+            <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+              Sim! Integramos com iFood, Uber Eats, Rappi, WhatsApp Business e muito mais. Todos os pedidos centralizados em uma única tela.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item bg-white border border-gray-200 rounded-xl scroll-animate stagger-3">
+          <button class="accordion-trigger w-full flex items-center justify-between p-6 text-left">
+            <span class="font-semibold text-gray-900">Preciso instalar algum programa?</span>
+            <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 text-primary flex-shrink-0"></i>
+          </button>
+          <div class="accordion-content">
+            <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+              Não. A SolusPed é 100% online e funciona em qualquer navegador. Também temos apps para iOS e Android para gestão mobile.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item bg-white border border-gray-200 rounded-xl scroll-animate stagger-4">
+          <button class="accordion-trigger w-full flex items-center justify-between p-6 text-left">
+            <span class="font-semibold text-gray-900">Como funciona o suporte técnico?</span>
+            <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 text-primary flex-shrink-0"></i>
+          </button>
+          <div class="accordion-content">
+            <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+              Oferecemos suporte por chat, email e telefone. Planos Pro e Enterprise têm atendimento prioritário com tempo de resposta garantido.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item bg-white border border-gray-200 rounded-xl scroll-animate stagger-5">
+          <button class="accordion-trigger w-full flex items-center justify-between p-6 text-left">
+            <span class="font-semibold text-gray-900">Posso cancelar a qualquer momento?</span>
+            <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 text-primary flex-shrink-0"></i>
+          </button>
+          <div class="accordion-content">
+            <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+              Sim, não há contrato de fidelidade. Você pode cancelar quando quiser diretamente na plataforma, sem burocracia.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item bg-white border border-gray-200 rounded-xl scroll-animate stagger-6">
+          <button class="accordion-trigger w-full flex items-center justify-between p-6 text-left">
+            <span class="font-semibold text-gray-900">Quais formas de pagamento vocês aceitam?</span>
+            <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 text-primary flex-shrink-0"></i>
+          </button>
+          <div class="accordion-content">
+            <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+              Aceitamos cartão de crédito, boleto bancário e PIX. Para planos anuais, oferecemos desconto de 20%.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CTA FINAL ==================== -->
+  <section class="py-20 lg:py-28 bg-gradient-to-br from-primary to-primary-dark">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="scroll-animate">
+        <h2 class="text-3xl sm:text-4xl lg:text-[40px] font-bold text-white leading-tight mb-4">
+          Pronto para transformar seu restaurante?
+        </h2>
+        <p class="text-lg text-white/80 mb-8 max-w-xl mx-auto">
+          Comece grátis hoje mesmo e descubra por que mais de 2.000 restaurantes confiam na SolusPed.
+        </p>
+
+        <a href="https://wa.me/5548991445565" target="_blank" rel="noopener noreferrer" class="bg-white text-primary hover:bg-gray-100 font-semibold px-10 py-4 rounded-xl text-base transition-all hover:scale-[1.02] hover:shadow-xl inline-block">
+          Falar no WhatsApp
+        </a>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6 text-white/60 text-sm">
+          <span class="flex items-center gap-2">
+            <i data-lucide="credit-card" class="w-4 h-4"></i>
+            Não precisa de cartão de crédito
+          </span>
+          <span class="hidden sm:inline">•</span>
+          <span class="flex items-center gap-2">
+            <i data-lucide="clock" class="w-4 h-4"></i>
+            Setup em 2 minutos
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer id="footer" class="bg-[#1A1A1A] pt-16 lg:pt-20 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 lg:gap-12 mb-12 scroll-animate">
+        <div class="col-span-2 md:col-span-4 lg:col-span-1">
+          <a href="#" class="flex items-center gap-2 mb-4">
+            <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+              <i data-lucide="check" class="w-6 h-6 text-white" stroke-width="3"></i>
+            </div>
+            <span class="text-xl font-bold text-white">SolusPed</span>
+          </a>
+          <p class="text-gray-400 text-sm leading-relaxed">Gestão de pedidos e delivery que funciona.</p>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Produto</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-400 text-sm hover:text-white transition-colors hover:translate-x-1 inline-block">Funcionalidades</a></li>
+            <li><a href="#" class="text-gray-400 text-sm hover:text-white transition-colors hover:translate-x-1 inline-block">Preços</a></li>
+            <li><a href="#" class="text-gray-400 text-sm hover:text-white transition-colors hover:translate-x-1 inline-block">Integrações</a></li>
+            <li><a href="#" class="text-gray-400 text-sm hover:text-white transition-colors hover:translate-x-1 inline-block">API</a></li>
+            <li><a href="#" class="text-gray-400 text-sm hover:text-white transition-colors hover:translate-x-1 inline-block">Segurança</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Empresa</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-400 text-sm hover:text-white transition-colors hover:translate-x-1 inline-block">Sobre Nós</a></li>
+            <li><a href="#" class="text-gray-400 text-sm hover:text-white transition-colors hover:translate-x-1 inline-block">Blog</a></li>
+            <li><a href="#" class="text-gray-400 text-sm hover:text-white transition-colors hover:translate-x-1 inline-block">Carreiras</a></li>
+            <li><a href="#" class="text-gray-400 text-sm hover:text-white transition-colors hover:translate-x-1 inline-block">Imprensa</a></li>
+            <li><a href="#" class="text-gray-400 text-sm hover:text-white transition-colors hover:translate-x-1 inline-block">Parceiros</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Recursos</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-400 text-sm hover:text-white transition-colors hover:translate-x-1 inline-block">Central de Ajuda</a></li>
+            <li><a href="#" class="text-gray-400 text-sm hover:text-white transition-colors hover:translate-x-1 inline-block">Tutoriais</a></li>
+            <li><a href="#" class="text-gray-400 text-sm hover:text-white transition-colors hover:translate-x-1 inline-block">Webinars</a></li>
+            <li><a href="#" class="text-gray-400 text-sm hover:text-white transition-colors hover:translate-x-1 inline-block">Comunidade</a></li>
+            <li><a href="#" class="text-gray-400 text-sm hover:text-white transition-colors hover:translate-x-1 inline-block">Status</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Contato</h4>
+          <ul class="space-y-3">
+            <li><a href="https://wa.me/5548991445565" class="text-gray-400 text-sm hover:text-white transition-colors">(48) 99144-5565</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 pt-8">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+          <p class="text-gray-500 text-sm">© 2025 SolusPed. Todos os direitos reservados.</p>
+          <div class="flex items-center gap-6">
+            <a href="#" class="text-gray-500 text-sm hover:text-white transition-colors">Privacidade</a>
+            <a href="#" class="text-gray-500 text-sm hover:text-white transition-colors">Termos</a>
+            <a href="#" class="text-gray-500 text-sm hover:text-white transition-colors">Cookies</a>
+          </div>
+          <div class="flex items-center gap-4">
+            <a href="#" aria-label="Instagram" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+            <a href="#" aria-label="Facebook" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+            <a href="#" aria-label="LinkedIn" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+            <a href="#" aria-label="Twitter" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button id="scroll-to-top" class="scroll-to-top fixed bottom-8 right-8 z-40 w-12 h-12 bg-primary text-white rounded-full shadow-lg opacity-0 invisible translate-y-4 transition-all duration-300 hover:bg-primary-light hover:scale-110 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" aria-label="Voltar ao topo">
+    <i data-lucide="arrow-up" class="w-6 h-6 mx-auto"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>
