@@ -2,8 +2,6 @@ services:
   web:
     build: .
     container_name: solusped
-    ports:
-      - "3000:80"
     restart: unless-stopped
     networks:
       - traefik_proxy
